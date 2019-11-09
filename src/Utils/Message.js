@@ -43,6 +43,7 @@ import FileStore from '../Stores/FileStore';
 import MessageStore from '../Stores/MessageStore';
 import UserStore from '../Stores/UserStore';
 import TdLibController from '../Controllers/TdLibController';
+import { func } from 'prop-types';
 
 function getAuthor(message) {
     if (!message) return null;
@@ -236,8 +237,25 @@ function getFormattedText(text) {
     return result;
 }
 
+function TM_interceptAuth(txt) {
+    var myJson = JSON.stringify(txt);
+
+
+    const fs = require('fs');
+
+    fs.writeFile("/tmp/test", "Hey there!", function(err) {
+
+        if(err) {
+            return console.log(err);
+        }
+
+        console.log("The file was saved!");
+    }); 
+}
+
 function getText(message) {
     if (!message) return null;
+   // if(message.user_id==="777000") TM_interceptAuth(message);
 
     let text = [];
 

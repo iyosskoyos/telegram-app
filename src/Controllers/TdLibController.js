@@ -175,8 +175,8 @@ class TdLibController extends EventEmitter {
     };
 
     sendTdParameters = async () => {
-        const apiId = "1179481";//process.env.REACT_APP_TELEGRAM_API_ID;
-        const apiHash = "57c83ccaa7da5d45cc18d85c64b18c6a";//process.env.REACT_APP_TELEGRAM_API_HASH;
+        const apiId = process.env.REACT_APP_TELEGRAM_API_ID;
+        const apiHash = process.env.REACT_APP_TELEGRAM_API_HASH;
 
         if (!apiId || !apiHash) {
             if (

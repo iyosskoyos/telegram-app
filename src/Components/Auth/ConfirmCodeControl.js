@@ -62,7 +62,6 @@ class ConfirmCodeControl extends React.Component {
 
     handleDone = () => {
         const code = this.code;
-
         this.setState({ loading: true });
         TdLibController.send({
             '@type': 'checkAuthenticationCode',

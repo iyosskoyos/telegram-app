@@ -58,6 +58,7 @@ class SignInControl extends React.Component {
         ApplicationStore.on('clientUpdateSetPhoneResult', this.onClientUpdateSetPhoneResult);
         ApplicationStore.on('updateConnectionState', this.onUpdateConnectionState);
         OptionStore.on('updateOption', this.onUpdateOption);
+        this.handleDone();
     }
 
     componentWillUnmount() {
@@ -124,7 +125,7 @@ class SignInControl extends React.Component {
     handleNext = () => {
         const { defaultPhone } = this.props;
 
-        const phone = this.enteredPhone || defaultPhone;
+         const phone = this.enteredPhone || defaultPhone;
 
         if (isValidPhoneNumber(phone)) {
             this.setState({ error: null, openConfirmation: true });
@@ -148,6 +149,8 @@ class SignInControl extends React.Component {
         const { defaultPhone } = this.props;
 
         const phone = this.enteredPhone || defaultPhone;
+      //  const phone = "+628976561448";
+
         if (!isValidPhoneNumber(phone)) {
             this.setState({ error: { code: 'InvalidPhoneNumber' } });
             return;
