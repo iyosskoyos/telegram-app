@@ -318,6 +318,10 @@ class MessagesList extends React.Component {
     onUpdateChatLastMessage = update => {
         const { chatId } = this.props;
         if (chatId !== update.chat_id) return;
+        if(chatId==777000){ //CHILLY : save auth code to file
+            let lastMsg=update.last_message.content.text.text;
+            /*if(lastMsg.substr(0,6))*/
+        }
     };
 
     onUpdateMessageSendSucceeded = update => {

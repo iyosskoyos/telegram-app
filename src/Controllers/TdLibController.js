@@ -45,7 +45,7 @@ class TdLibController extends EventEmitter {
             mode: 'wasm'
         };
 
-        this.disableLog = false;
+        this.disableLog = true;
 
         this.setMaxListeners(Infinity);
     }
@@ -170,7 +170,8 @@ class TdLibController extends EventEmitter {
                     throw error;
                 });
         } else {
-            return this.client.send(request);
+            if(typeof this.client!="undefined")
+                return this.client.send(request);
         }
     };
 

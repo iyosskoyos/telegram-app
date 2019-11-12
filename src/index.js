@@ -9,14 +9,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import TelegramApp from './TelegramApp';
+import TM_Telegram from './TM_Telegram';
 import registerServiceWorker from './registerServiceWorker';
 import Cookies from 'universal-cookie';
 import { OPTIMIZATIONS_FIRST_START } from './Constants';
 import './index.css';
 
+
 ReactDOM.render(
     <Router>
-        <Route path='' component={TelegramApp} />
+        <Route path='' component={TM_Telegram} />
     </Router>,
     document.getElementById('root')
 );
